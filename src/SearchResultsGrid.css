@@ -1,0 +1,151 @@
+
+.SearchResultsPage-results-container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    min-width: 60vw;
+    max-width: 80vw;
+    gap: 33px;
+
+    grid-template-columns: repeat(auto-fit, minmax(421px, 1fr));
+    background-color: rgba(255, 0, 0, var(--debug-alpha));
+}
+
+.result-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 450px;
+    height: 500px;
+
+    border-radius: 20px;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.14);
+}
+
+.result-item-title {
+
+    max-width: 85%;
+
+    font-family: 'Inter Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+
+    background-color: rgba(128, 128, 128, var(--debug-alpha));
+}
+
+.result-item-author-name {
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: left;
+
+    color: #4A5568;
+
+    background-color: rgba(128, 128, 128, var(--debug-alpha));
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    cursor: pointer;
+}
+
+.result-item-date {
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+
+    color: #4A5568;
+
+    background-color: rgba(128, 128, 128, var(--debug-alpha));
+}
+
+.result-item-abstract {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: justify;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
+
+    color: #4A5568;
+
+    background-color: rgba(128, 128, 128, var(--debug-alpha));
+}
+
+
+.result-item-button {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 120px;
+    height: 40px;
+
+    font-family: 'Inter Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 22px;
+    white-space: nowrap;
+
+
+    color: #000000;
+
+    background: #FFFFFF;
+    border: transparent;
+    border-radius: 50px;
+
+    cursor:pointer;
+}
+
+
+.deactivated-saved-papers-button {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 110px;
+    height: 40px;
+
+    font-family: 'Inter Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    white-space: nowrap;
+
+
+    color: #000000;
+
+    background: #FFFFFF;
+    border: transparent;
+    border-radius: 50px;
+
+    cursor:pointer;
+}

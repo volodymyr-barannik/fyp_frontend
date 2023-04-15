@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import HomePage from './HomePage';
 import reportWebVitals from './reportWebVitals';
+import SearchResultsPage from "./SearchResultsPage";
+import { BrowserRouter, Route, Routes, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import LoginModal from "./LoginModal";
+import App from "./App";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App/>
   </React.StrictMode>
 );
 

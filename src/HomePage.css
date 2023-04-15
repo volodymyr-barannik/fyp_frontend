@@ -1,0 +1,261 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.HomePage-bg-gradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #DDCDFF 0%, rgba(189, 255, 219, 1) 100%);
+}
+
+.HomePage-bg-spline {
+  position: fixed;
+  left: 0%;
+  top: 80%;
+  width: 100%;
+
+  z-index: -1;
+}
+
+.HomePage-bg-figures {
+  position: fixed;
+  top: 58%;
+  left: 20%;
+  width: 60%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.Input-search-border-wide {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100vw;
+  max-width: 843px;
+  min-width: 573px;
+  height: 94px;
+
+  background: #FFFFFF;
+  border-radius: 50px;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+
+  filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.14));
+}
+
+.Input-search-box-wide {
+  margin-top: 6px;
+  padding-left: 32px;
+  margin-right: auto;
+  height: 94px;
+  width: 600px;
+
+  border: none;
+  background-color: transparent;
+  color: rgba(0,0,0,.87);
+  word-wrap: break-word;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+}
+
+.Input-search-box-wide::placeholder {
+  color: #767676;
+}
+
+.Input-search-button-wide {
+  position: relative;
+
+  min-width: 139px;
+  height: 71px;
+  margin-right: 19px;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #FFFFFF;
+  border: none;
+
+  background: #6833FF;
+  border-radius: 50px;
+
+  filter: drop-shadow(-1px 1px 15px rgba(36, 0, 255, 0.25));
+
+  cursor:pointer;
+}
+
+.Input-search-icon {
+  padding-left: 36px;
+}
+
+
+.HomePage-site-name {
+
+  margin-bottom: 0;
+
+  white-space: nowrap;
+  max-width: 100dvw;
+
+  font-family: 'Inter Extra Bold', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+
+  font-size: 80px;
+
+  background: linear-gradient(270deg, #143068 0%, #6C6CFF 0.01%, #551FEE 0.02%, #175F88 52.08%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .HomePage-site-name {
+    font-size: calc(80px * 1000 / 1920);
+    max-width: none;
+  }
+}
+
+.HomePage-site-subtitle {
+
+  margin-top: 14px;
+
+  white-space: nowrap;
+
+  font-family: 'Inter Bold', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+
+  color: #181818;
+}
+
+@media screen and (max-width: 1000px) {
+  .HomePage-site-subtitle {
+    font-size: calc(40px * 1000 / 1920);
+    margin-top: 0px;
+    max-width: none;
+  }
+}
+
+.HomePage-site-footer {
+
+  white-space: nowrap;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+
+  color: #282828;
+}
+
+.HomePage-navbar {
+
+  height: 151px;
+  min-width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 25px;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Your center element styles */
+}
+
+.button-white {
+  position: relative;
+
+  width: 120px;
+  height: 55px;
+
+  font-family: 'Inter Bold', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  white-space: nowrap;
+
+  color: #000000;
+
+  background: #FFFFFF;
+  border: transparent;
+  box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+
+  cursor:pointer;
+}
+
+.button-transparent {
+  position: relative;
+
+  height: 55px;
+
+  font-family: 'Inter Bold', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  white-space: nowrap;
+
+  color: #000000;
+  border: none;
+
+  background: transparent;
+
+  cursor:pointer;
+}

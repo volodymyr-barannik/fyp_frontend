@@ -1,0 +1,88 @@
+:root {
+    --debug-alpha: 0.0;
+}
+
+app {
+    position: relative;
+    margin: 0;
+}
+
+header {
+    min-height: 50px;
+    width: calc(100vw - 18px);
+}
+
+footer {
+    min-height: 50px;
+
+}
+
+body {
+    flex: 1;
+
+    /* center children and let them flow vertically. Center horizontally, let elements fill full screen horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.App {
+    text-align: center;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.background-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 70vh;
+
+    background: linear-gradient(180deg, #DDCDFF 0%, rgba(189, 255, 219, 0.3) 50%, rgba(189, 255, 219, 0) 100%);
+    z-index: -100;
+}
+
+.center-contents {
+    /* Center contents horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flex-box-align-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+
+    gap: 25px;
+}
+
+.flex-box-align-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.flex-box-align-around {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+
+    background-color: rgba(144, 166, 135, var(--debug-alpha));
+}

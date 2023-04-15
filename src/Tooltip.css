@@ -1,0 +1,25 @@
+.tooltip-container {
+    position: relative;
+    display: inline;
+    cursor: pointer;
+
+    max-width: 200px;
+}
+
+.tooltip-text {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: normal;
+    max-width: 200px;
+    z-index: 1;
+
+    font-size: 12px;
+}
+
+.tooltip-container:hover .tooltip-text {
+    display: block;
+}
