@@ -6,7 +6,7 @@ import "../Core.css";
 import {useEffect, useRef} from "react";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {sendSearchRequest} from "../Common";
-import UserPanel from "../UserPanel";
+import UserPanel from "./Reusables/UserPanel";
 import SearchResultsGrid from "../SearchResults/SearchResultsGrid";
 
 

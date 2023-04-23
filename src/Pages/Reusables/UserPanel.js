@@ -1,10 +1,10 @@
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import SaveIcon from "./Resources/SaveIcon.svg";
-import ArrowLeftIcon from "./Resources/ArrowLeftIcon.svg";
+import SaveIcon from "../../Resources/SaveIcon.svg";
+import ArrowLeftIcon from "../../Resources/ArrowLeftIcon.svg";
 import {useContext, useEffect, useState} from "react";
-import LoginModalContext from "./Auth/LoginModalContext";
-import GlobalAuthenticationContext from "./Auth/GlobalAuthenticationContext";
-import {isLoggedIn} from "./Common";
+import LoginModalContext from "../../Auth/LoginModalContext";
+import GlobalAuthenticationContext from "../../Auth/GlobalAuthenticationContext";
+import {isLoggedIn} from "../../Common";
 
 
 function UserPanel({handleSavedPapersClicked}) {

@@ -12,7 +12,7 @@ import {useContext, useEffect, useRef, useState} from "react";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Tooltip from "../Misc/Tooltip";
 import {extract_date, sendSearchRequest} from "../Common";
-import UserPanel from "../UserPanel";
+import UserPanel from "./Reusables/UserPanel";
 import SearchResultsGrid from "../SearchResults/SearchResultsGrid";
 import axios from "axios";
 

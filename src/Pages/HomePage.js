@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import {useContext, useEffect} from "react";
 import LoginModalContext from "../Auth/LoginModalContext";
 import {sendSearchRequest} from "../Common";
-import UserPanel from "../UserPanel";
+import UserPanel from "./Reusables/UserPanel";
 
 function HomePage() {
 
