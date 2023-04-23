@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function sendSearchRequest(query) {
 
-    console.log('sending search request for prompt: ' + query + `. sessionId=${localStorage.getItem("sessionId")}`)
+    console.log('sending search request for query: ' + query + `. sessionId=${localStorage.getItem("sessionId")}`)
 
     // Send a GET request to the server
     return axios.get('http://localhost:8080/search',{

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import HomePage from './HomePage';
+import HomePage from './Pages/HomePage';
 import reportWebVitals from './reportWebVitals';
-import SearchResultsPage from "./SearchResultsPage";
+import SearchResultsPage from "./Pages/SearchResultsPage";
 import { BrowserRouter, Route, Routes, createBrowserRouter, RouterProvider } from 'react-router-dom';
-import LoginModal from "./LoginModal";
+import LoginModal from "./Auth/LoginModal";
 import App from "./App";
 
 

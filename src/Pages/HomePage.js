@@ -1,20 +1,22 @@
-import logo from './logo.svg';
-import backgroundLine from './BackgroundLine.svg';
-import SearchIcon from './SearchIcon.svg';
-import BackgroundFigures from './BackgroundFigures.svg';
+import backgroundLine from '../resources/BackgroundLine.svg';
+import SearchIcon from '../resources/SearchIcon.svg';
+import BackgroundFigures from '../resources/BackgroundFigures.svg';
 import './HomePage.css';
-import "./Core.css";
-import FindYourPaperLogo from "./FYP.svg";
+import "../Core.css";
+import FindYourPaperLogo from "../resources/FYP.svg";
 import { Link, useNavigate } from 'react-router-dom';
-import {useContext} from "react";
-import LoginModalContext from "./LoginModalContext";
-import {sendSearchRequest} from "./Common";
-import UserPanel from "./UserPanel";
+import {useContext, useEffect} from "react";
+import LoginModalContext from "../Auth/LoginModalContext";
+import {sendSearchRequest} from "../Common";
+import UserPanel from "../UserPanel";
 
 function HomePage() {
 
-    const { setLoginModalOpen, setIsLogin } = useContext(LoginModalContext);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        document.title = `Homepage`;
+    }, []);
 
     const handleSearch = async (event) => {
         event.preventDefault()
@@ -25,12 +27,7 @@ function HomePage() {
             return;
         }
 
-        const results = await sendSearchRequest(searchPrompt);
-        navigate('/search', {
-            state: {
-                initialResults: results,
-                initialQuery: searchPrompt
-            }});
+        navigate(`/search?query=${searchPrompt}`);
     };
 
 

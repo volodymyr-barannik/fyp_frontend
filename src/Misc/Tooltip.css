@@ -3,7 +3,7 @@
     display: inline;
     cursor: pointer;
 
-    max-width: 200px;
+    max-width: 100%;
 }
 
 .tooltip-text {

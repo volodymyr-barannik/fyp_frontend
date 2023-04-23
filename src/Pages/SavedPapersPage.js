@@ -1,19 +1,19 @@
-import backgroundLine from './BackgroundLine.svg';
-import SearchIcon from './SearchIcon.svg';
-import FindYourPaperLogo from './FYP.svg';
-import SaveIcon from './SaveIcon.svg';
-import ViewIcon from './ViewIcon.svg';
-import UpArrowIcon from './UpArrowIcon.svg';
-import ArrowLeftIcon from './ArrowLeftIcon.svg';
-import SortIcon from './SortIcon.svg';
+import backgroundLine from '../resources/BackgroundLine.svg';
+import SearchIcon from '../resources/SearchIcon.svg';
+import FindYourPaperLogo from '../resources/FYP.svg';
+import SaveIcon from '../resources/SaveIcon.svg';
+import ViewIcon from '../resources/ViewIcon.svg';
+import UpArrowIcon from '../resources/UpArrowIcon.svg';
+import ArrowLeftIcon from '../resources/ArrowLeftIcon.svg';
+import SortIcon from '../resources/SortIcon.svg';
 import './SearchResultsPage.css';
-import "./Core.css";
+import "../Core.css";
 import {useContext, useEffect, useRef, useState} from "react";
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import Tooltip from "./Tooltip";
-import {extract_date, sendSearchRequest} from "./Common";
-import UserPanel from "./UserPanel";
-import SearchResultsGrid from "./SearchResultsGrid";
+import Tooltip from "../Misc/Tooltip";
+import {extract_date, sendSearchRequest} from "../Common";
+import UserPanel from "../UserPanel";
+import SearchResultsGrid from "../SearchResults/SearchResultsGrid";
 import axios from "axios";
 
 
@@ -22,7 +22,10 @@ function SavedPapersPage() {
     console.log('re-rendering SavedPapersPage')
 
     const [savedPapersExist, setSavedPapersExist] = useState(true);
-    const navigate = useNavigate();
+
+    useEffect(() => {
+        document.title = `Saved papers`;
+    }, []);
 
     // reference to the grid that shows the results
     const searchResultsGridRef = useRef(null);
@@ -70,22 +73,6 @@ function SavedPapersPage() {
         });
     }, []);
 
-
-    const handleSavedPapersSearch = async (event) => {
-        event.preventDefault()
-
-        const searchPrompt = document.getElementById('searchPrompt').value;
-        console.log('processing search request for prompt: ' + searchPrompt)
-        if (!searchPrompt) {
-            return;
-        }
-
-        const results = await sendSearchRequest(searchPrompt);
-
-        searchResultsGridRef.current.updateResultItems(results);
-    };
-
-
     return (
         <div className="app">
             <d className="background-gradient"></d>
@@ -114,7 +101,7 @@ function SavedPapersPage() {
                 <body>
                     <img src={backgroundLine} className="HomePage-bg-spline" alt=''/>
 
-                    {savedPapersExist && <SearchResultsGrid ref={searchResultsGridRef}/>}
+                    {savedPapersExist && <SearchResultsGrid removeWhenUnsaved={true} ref={searchResultsGridRef}/>}
                     {!savedPapersExist && <div>You have no saved papers.</div>}
                 </body>
 

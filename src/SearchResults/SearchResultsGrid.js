@@ -1,16 +1,18 @@
-import SaveIcon from './SaveIcon.svg';
-import ViewIcon from './ViewIcon.svg';
-import UpArrowIcon from './UpArrowIcon.svg';
+import SaveIcon from '../resources/SaveIcon.svg';
+import ViewIcon from '../resources/ViewIcon.svg';
+import UpArrowIcon from '../resources/UpArrowIcon.svg';
 import './SearchResultsGrid.css';
-import "./Core.css";
+import "../Core.css";
 import {forwardRef, useContext, useEffect, useImperativeHandle, useState} from "react";
-import Tooltip from "./Tooltip";
-import {extract_date} from "./Common";
+import Tooltip from "../Misc/Tooltip";
+import {extract_date} from "../Common";
 import axios from "axios";
 import SearchResultItem from "./SearchResultItem";
 
 
 const SearchResultsGrid = forwardRef((props, ref) => {
+
+    const {removeWhenUnsaved} = props;
 
     console.log('re-rendering search results grid')
 
@@ -33,11 +35,14 @@ const SearchResultsGrid = forwardRef((props, ref) => {
                 saved: item.paper.saved,
             }));
 
+            console.log("updateResultItems updating items to: ")
+            console.log(newArray)
+
             setItems(newArray);
         }
         else
         {
-            console.log('jsonPapers is empty')
+            console.log('SearchResultsGrid::updateResultItems jsonPapers is empty')
         }
     }
 
@@ -46,20 +51,22 @@ const SearchResultsGrid = forwardRef((props, ref) => {
         updateResultItems: updateResultItems
     }));
 
-    function onItemDeleted(propsForItemToBeRemoved) {
+    function onItemUnsaved(propsForItemToBeRemoved) {
 
-        console.log('onItemDeleted called')
+        console.log('onItemUnsaved called')
 
-        const updatedItems = items.filter(item => item.arxiv_url !== propsForItemToBeRemoved.arxiv_url);
+        if (removeWhenUnsaved) {
+            const updatedItems = items.filter(item => item.arxiv_url !== propsForItemToBeRemoved.arxiv_url);
 
-        // Set the state to the updated array
-        setItems(updatedItems);
+            // Set the state to the updated array
+            setItems(updatedItems);
+        }
     }
 
     return (
         <div className="SearchResultsPage-results-container" ref={ref}>
             {items.map((item, index) => (
-                <SearchResultItem {...item} onItemDeleted={onItemDeleted}/>
+                <SearchResultItem {...item} onItemUnsaved={onItemUnsaved}/>
             ))}
         </div>
 

@@ -1,9 +1,9 @@
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import SaveIcon from "./SaveIcon.svg";
-import ArrowLeftIcon from "./ArrowLeftIcon.svg";
+import SaveIcon from "./resources/SaveIcon.svg";
+import ArrowLeftIcon from "./resources/ArrowLeftIcon.svg";
 import {useContext, useEffect, useState} from "react";
-import LoginModalContext from "./LoginModalContext";
-import GlobalAuthenticationContext from "./GlobalAuthenticationContext";
+import LoginModalContext from "./Auth/LoginModalContext";
+import GlobalAuthenticationContext from "./Auth/GlobalAuthenticationContext";
 import {isLoggedIn} from "./Common";
 
 
@@ -13,6 +13,7 @@ function UserPanel({handleSavedPapersClicked}) {
     const { setLoginModalOpen, setIsLogin } = useContext(LoginModalContext);
     const { isLoggedInState, setIsLoggedInState } = useContext(GlobalAuthenticationContext);
 
+    console.log(`UserPanel isLoggedInState=${isLoggedInState}`)
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -30,6 +31,7 @@ function UserPanel({handleSavedPapersClicked}) {
         console.log('logging out')
         localStorage.removeItem("sessionId");
         setIsLoggedInState(false);
+
         console.log('logged out')
     }
 

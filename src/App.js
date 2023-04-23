@@ -1,29 +1,30 @@
 // src/App.js
-import React, { useState } from 'react';
-import LoginModal from "./LoginModal";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import HomePage from "./HomePage";
-import SearchResultsPage from "./SearchResultsPage";
-import LoginModalContext from "./LoginModalContext";
-import GlobalAuthenticationContextProvider from "./GlobalAuthenticationContextProvider";
-import SavedPapersPage from "./SavedPapersPage";
+import React, {useContext, useState} from 'react';
+import LoginModal from "./Auth/LoginModal";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import SearchResultsPage from "./Pages/SearchResultsPage";
+import LoginModalContext from "./Auth/LoginModalContext";
+import GlobalAuthenticationContextProvider from "./Auth/GlobalAuthenticationContextProvider";
+import SavedPapersPage from "./Pages/SavedPapersPage";
+import GlobalAuthenticationContext from "./Auth/GlobalAuthenticationContext";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <HomePage />,
-    },
 
-    {
-        path: '/search',
-        element: <SearchResultsPage />
-    },
+function AppRoutes() {
+    const { isLoggedInState } = useContext(GlobalAuthenticationContext);
 
-    {
-        path: '/saved',
-        element: <SavedPapersPage />
-    }
-]);
+    return (
+        <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/"         element = {<HomePage/>}/>
+                    <Route path="/search"   element = {<SearchResultsPage/>}/>
+                    <Route path="/saved"    element = {isLoggedInState ? (<SavedPapersPage/>) : (<Navigate to="/"/>)}/>
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
+}
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
                         setIsLogin={setIsLogin} />
 
             <LoginModalContext.Provider value={{ loginModalOpen, setLoginModalOpen, isLogin, setIsLogin }}>
-                <RouterProvider router={router} />
+                <AppRoutes/>
             </LoginModalContext.Provider>
         </GlobalAuthenticationContextProvider>
     );

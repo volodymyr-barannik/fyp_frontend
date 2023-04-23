@@ -1,0 +1,26 @@
+
+.SearchResultsPage-results-container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    min-width: 60vw;
+    max-width: 80vw;
+    gap: 33px;
+
+    grid-template-columns: repeat(auto-fit, minmax(421px, 1fr));
+    background-color: rgba(255, 0, 0, var(--debug-alpha));
+}
+
+.result-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 450px;
+    height: 500px;
+
+    border-radius: 20px;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.14);
+}
