@@ -1,9 +1,9 @@
-import backgroundLine from '../resources/BackgroundLine.svg';
-import SearchIcon from '../resources/SearchIcon.svg';
-import BackgroundFigures from '../resources/BackgroundFigures.svg';
+import backgroundLine from '../Resources/BackgroundLine.svg';
+import SearchIcon from '../Resources/SearchIcon.svg';
+import BackgroundFigures from '../Resources/BackgroundFigures.svg';
 import './HomePage.css';
 import "../Core.css";
-import FindYourPaperLogo from "../resources/FYP.svg";
+import FindYourPaperLogo from "../Resources/FYP.svg";
 import { Link, useNavigate } from 'react-router-dom';
 import {useContext, useEffect} from "react";
 import LoginModalContext from "../Auth/LoginModalContext";

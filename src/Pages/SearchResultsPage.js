@@ -1,9 +1,9 @@
-import backgroundLine from '../resources/BackgroundLine.svg';
-import SearchIcon from '../resources/SearchIcon.svg';
-import FindYourPaperLogo from '../resources/FYP.svg';
+import backgroundLine from '../Resources/BackgroundLine.svg';
+import SearchIcon from '../Resources/SearchIcon.svg';
+import FindYourPaperLogo from '../Resources/FYP.svg';
 import './SearchResultsPage.css';
 import "../Core.css";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {sendSearchRequest} from "../Common";
 import UserPanel from "../UserPanel";

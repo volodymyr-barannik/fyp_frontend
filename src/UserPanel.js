@@ -1,6 +1,6 @@
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import SaveIcon from "./resources/SaveIcon.svg";
-import ArrowLeftIcon from "./resources/ArrowLeftIcon.svg";
+import SaveIcon from "./Resources/SaveIcon.svg";
+import ArrowLeftIcon from "./Resources/ArrowLeftIcon.svg";
 import {useContext, useEffect, useState} from "react";
 import LoginModalContext from "./Auth/LoginModalContext";
 import GlobalAuthenticationContext from "./Auth/GlobalAuthenticationContext";

@@ -1,7 +1,7 @@
-import SaveIcon from '../resources/SaveIcon.svg';
-import CrossIcon from '../resources/CrossIcon.svg';
-import ViewIcon from '../resources/ViewIcon.svg';
-import UpArrowIcon from '../resources/UpArrowIcon.svg';
+import SaveIcon from '../Resources/SaveIcon.svg';
+import CrossIcon from '../Resources/CrossIcon.svg';
+import ViewIcon from '../Resources/ViewIcon.svg';
+import UpArrowIcon from '../Resources/UpArrowIcon.svg';
 import './SearchResultItem.css';
 import "../Core.css";
 import {forwardRef, useContext, useEffect, useImperativeHandle, useState} from "react";
